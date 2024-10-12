@@ -27,13 +27,17 @@
 % Begin document
 \begin{document}
 
-\textbf{Objectives and Hypothesis:} For this effort, I will explore two aspects of this problem: understanding a study in the language of category theory and exploring how this study can be composed with other studies.
-To carry out this effort, I will use three strongly hetergeneous data sets to develop a study. 
+% TODO: Wordsmith "knowledge products" a bit more
+% TODO: Review first sentence again
+\textbf{Hypothesis:} Knowledge discovery is a fundamental procedure across disciplines but is time intensive and laborious.
+\textbf{Framing knowledge discovery in category theoretic terminology would enable the furthered understanding of relationships between knowledge products.}
 
-\textbf{Introduction:} Compositionality, the idea that describes and quantifies how complex things can be assembled out of simple parts, [@compositionality] is a concept ubiquitous across mathematics [@szabo]. 
-This is particularly seen in the very abstract mathematics of category theory which, simply put, studies the "relationships which exist between things". 
-This field, which has an intentional vagueness due to its heavy abstraction, leads to a richness in imagining how things can be composed together (otherwise known as "relational thinking" [@topos]). 
-The application of relational thinking to "applied" fields such as engineering system design [@https://applied-compositional-thinking.engineering/act4e-materials/], database architecture [https://arxiv.org/abs/1602.03501], and machine learning [Category Theory in Machine Learning](https://arxiv.org/abs/2106.07032) is slowly permeating across various fields outside of mathematics. 
+\textbf{Introduction:} Compositionality, the characteristic that ``describes and quantifies how complex things can be assembled out of simple parts''[1], is a concept ubiquitous across mathematics but is seen acutely in the fundamentals of category theory.
+Simply put, category theory studies the "relationships that exist between things" which gives one a vantage point to think not on the minutiae of a particular problem but more broadly about how things in a problem space may ``fit together'' (i.e. ``composed together'').
+This way of framing problems is beginning to permeate specific domains such as engineering system design [2], database architecture [3], and machine learning [4]. 
+
+With this perspective, one 
+One task that is common to arguably all disciplines is the procedure of scrutinizing available information of any kind (data) to provide new insights (knowledge) about a particular topic -- a procedure more commonly referred to as ``knowledge discovery''.
 However, one applied aspect of relational thinking that is only starting to be studied is to frame research studies as compositional objects. 
 Using the machinery provided by category theory, the goal of this project is to explore and formalize the utilization of research studies as compositional objects. 
 Motivating this effort is the observation that, agnostic to field, research studies can appear very similar, but due to underlying differences with data or methodologies, require research teams to redo or, in an ad hoc manner, adapt old projects to novel applications. 
@@ -41,7 +45,9 @@ At best, in engineering contexts, this can lead to financial or productivity los
 Formalizing our understanding of research studies as compositional objects themselves could lead to more effective coordination across a research topic and lead to new frontiers of research that could take place using the formalization of studies on top of underlying mathematical objects.
 
 % TODO: Include Objectives within this section
-\textbf{Method and Research Plan:} The data I will use comprises of the following: [IPUMS](http://ipums.org/) census microdata for a variety of different demographic information across the globe and a ton for the USA, [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) & [National Centers for Environmental Information](https://www.ncei.noaa.gov) These two datasets have such a wide array of climate related data for the entire globe on a fantastic time resolution, and [Pharmetrics Plus](https://www.iqvia.com/locations/united-states/library/fact-sheets/iqvia-pharmetrics-plus) a 35+ million USA patient database of patient medical records from across the entire country.
+\textbf{Method and Research Plan:}  For this effort, I will explore two aspects of this problem: understanding a study in the language of category theory and exploring how this study can be composed with other studies.
+To carry out this effort, I will use three strongly hetergeneous data sets to develop a study. 
+The data I will use comprises of the following: [IPUMS](http://ipums.org/) census microdata for a variety of different demographic information across the globe and a ton for the USA, [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) & [National Centers for Environmental Information](https://www.ncei.noaa.gov) These two datasets have such a wide array of climate related data for the entire globe on a fantastic time resolution, and [Pharmetrics Plus](https://www.iqvia.com/locations/united-states/library/fact-sheets/iqvia-pharmetrics-plus) a 35+ million USA patient database of patient medical records from across the entire country.
 What motivates this particular selection of data sets is the significant differences between them: the IPUMS data is regularly sampled across the US at a state or coarse population level at regular and monthly time intervals, the ERA5 and NCEI data is also regularly sampled but at a much more granular time and temporal resolution, and the patient data set varies significantly by geospatial region as well as having extremely irregular or even random sampling intervals for patient encounters.
 Additionally, given my research experience, wondering about how to best relate and harmonize these strongly heterogeneous datasets is a common problem I have witnessed across projects -- figuring out this task can sometimes be most of the solution.
 
@@ -91,16 +97,6 @@ The use of category theory to harmonize heterogeneous datasets—ranging from ce
 
 \textbf{Broader Impacts:} This project introduces a new framework for formalizing research studies as compositional objects, which could revolutionize how large-scale, complex systems are analyzed across fields such as engineering, computer, and information sciences. By establishing a structured approach to integrating diverse methodologies and datasets, this work has the potential to enhance research reproducibility, scalability, and collaboration across disciplines. The compositional framework could enable the development of new computational tools and models that support more efficient, modular research designs, leading to broad applications in optimizing workflows, improving data interoperability, and advancing the frontiers of scientific discovery in both theoretical and applied domains.
 
+\textbf{References:} [1] \textit{Compositionality}, 2024. [2] \textit{ACT4ED}, MIT 1.S980 [3] \textit{Algebraic Databases}, Shultz, et. al., 2016. [4] \textit{Category theory in machine learning}, Gavranović, 2021.
+
 \end{document}
-
-% @incollection{szabo,
-%   author    = {Zoltán Gendler Szabó},
-%   title     = {Compositionality},
-%   editor    = {Edward N. Zalta and Uri Nodelman},
-%   booktitle = {The Stanford Encyclopedia of Philosophy},
-%   edition   = {Fall 2024},
-%   publisher = {Metaphysics Research Lab, Stanford University},
-%   url       = {https://plato.stanford.edu/archives/fall2024/entries/compositionality/},
-%   year      = {2024}
-% }
-
