@@ -1,0 +1,106 @@
+%! TeX program = lualatex
+
+\documentclass[11pt]{extarticle}
+
+% Set 1-inch margins
+\usepackage[margin=1in]{geometry}
+
+% Set Times New Roman for text and Cambria Math for math fonts
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% Use Symbol font for non-alphabetic characters
+\usepackage{textcomp}
+
+% Set line spacing to single (no less than single-spacing)
+\usepackage{setspace}
+\setstretch{1.0}
+
+% Package for handling citations
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+% For inserting images and subcaptions
+\usepackage{graphicx,subcaption} 
+\usepackage{svg}
+
+% Begin document
+\begin{document}
+
+\textbf{Objectives and Hypothesis:} For this effort, I will explore two aspects of this problem: understanding a study in the language of category theory and exploring how this study can be composed with other studies.
+To carry out this effort, I will use three strongly hetergeneous data sets to develop a study. 
+
+\textbf{Introduction:} Compositionality, the idea that describes and quantifies how complex things can be assembled out of simple parts, [@compositionality] is a concept ubiquitous across mathematics [@szabo]. 
+This is particularly seen in the very abstract mathematics of category theory which, simply put, studies the "relationships which exist between things". 
+This field, which has an intentional vagueness due to its heavy abstraction, leads to a richness in imagining how things can be composed together (otherwise known as "relational thinking" [@topos]). 
+The application of relational thinking to "applied" fields such as engineering system design [@https://applied-compositional-thinking.engineering/act4e-materials/], database architecture [https://arxiv.org/abs/1602.03501], and machine learning [Category Theory in Machine Learning](https://arxiv.org/abs/2106.07032) is slowly permeating across various fields outside of mathematics. 
+However, one applied aspect of relational thinking that is only starting to be studied is to frame research studies as compositional objects. 
+Using the machinery provided by category theory, the goal of this project is to explore and formalize the utilization of research studies as compositional objects. 
+Motivating this effort is the observation that, agnostic to field, research studies can appear very similar, but due to underlying differences with data or methodologies, require research teams to redo or, in an ad hoc manner, adapt old projects to novel applications. 
+At best, in engineering contexts, this can lead to financial or productivity losses and at worst could lead to delays in coordinating disaster responses across research teams. 
+Formalizing our understanding of research studies as compositional objects themselves could lead to more effective coordination across a research topic and lead to new frontiers of research that could take place using the formalization of studies on top of underlying mathematical objects.
+
+% TODO: Include Objectives within this section
+\textbf{Method and Research Plan:} The data I will use comprises of the following: [IPUMS](http://ipums.org/) census microdata for a variety of different demographic information across the globe and a ton for the USA, [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) & [National Centers for Environmental Information](https://www.ncei.noaa.gov) These two datasets have such a wide array of climate related data for the entire globe on a fantastic time resolution, and [Pharmetrics Plus](https://www.iqvia.com/locations/united-states/library/fact-sheets/iqvia-pharmetrics-plus) a 35+ million USA patient database of patient medical records from across the entire country.
+What motivates this particular selection of data sets is the significant differences between them: the IPUMS data is regularly sampled across the US at a state or coarse population level at regular and monthly time intervals, the ERA5 and NCEI data is also regularly sampled but at a much more granular time and temporal resolution, and the patient data set varies significantly by geospatial region as well as having extremely irregular or even random sampling intervals for patient encounters.
+Additionally, given my research experience, wondering about how to best relate and harmonize these strongly heterogeneous datasets is a common problem I have witnessed across projects -- figuring out this task can sometimes be most of the solution.
+
+Within the first year of my work on this, I will flesh out a study using this strongly heterogeneous data.
+To do this, I will explore how to model this data on top of the categorical structure, $\mathscr{C}$-sets, which is a functor mapping a schema category $\mathscr{C}$ into the category $\mathbb{Set}$ (as objects) and functions between them (as morphisms) [@osgood].
+Further enriching this object is the decorated copresheaf (known as "acsets") which is very helpful in relating these species of data and computing upon them [@lynch]
+
+In the second year, after I have more adequately described and understood this study in terms of category theory, I will further explore how to meaningfully relate scientific studies together.
+Inspired by thoughts from @bgavran's papers in applying Category Theory to Machine Learning (namely [Category Theory in Machine Learning](https://arxiv.org/abs/2106.07032) and [Position: Categorical Deep Learning is an Algebraic Theory of All Architectures](https://arxiv.org/abs/2402.15332)) 
+**Interface a ACSet study configuration with Machine Learning tools.** As the current ACSet machinery is within Julia, we'll make liberal use of the [Tables.jl interface](https://github.com/JuliaData/Tables.jl) as probably the core interchange format.
+**Interpret a statistic on top of the ACSet-based study.** This will be the crux of the study as to what is possible and what can be done within this framing. At this point will be some uncharted territory so will base again upon *An Algebraic Framework for Structured Epidemic Modeling*. Perhaps I will reach out to Simon Frost or @ndo885 at this stage as well.
+
+\begin{figure}[!h]
+ \begin{subfigure}{0.4\textwidth}
+     \includegraphics[width=\textwidth]{marking_1}
+     \caption{\dots}
+     \label{fig:a}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}{0.4\textwidth}
+     \includegraphics[width=\textwidth]{marking_2}
+     \caption{\dots}
+     \label{fig:b}
+ \end{subfigure}
+ 
+ \medskip
+ \begin{subfigure}{0.4\textwidth}
+     \includegraphics[width=\textwidth]{marking_3}
+     \caption{\dots}
+     \label{fig:c}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}{0.4\textwidth}
+     \includegraphics[width=\textwidth]{marking_4}
+     \caption{\dots}
+     \label{fig:d}
+ \end{subfigure}
+
+ \caption{Caption for all 4 figures}
+ \label{Label}
+
+\end{figure}
+
+\textbf{Intellectual Merit:} This project aims to advance fundamental knowledge by applying category theory to the formalization of research studies as compositional objects. 
+By introducing a mathematically rigorous framework to model and relate studies across diverse fields, the project addresses foundational challenges in engineering system design, database architecture, and data integration. 
+The use of category theory to harmonize heterogeneous datasets—ranging from census microdata to climate and patient records—represents a transformative approach that could redefine how information sciences handle complex, multi-source data, offering new paradigms for knowledge synthesis and data interoperability.
+
+\textbf{Broader Impacts:} This project introduces a new framework for formalizing research studies as compositional objects, which could revolutionize how large-scale, complex systems are analyzed across fields such as engineering, computer, and information sciences. By establishing a structured approach to integrating diverse methodologies and datasets, this work has the potential to enhance research reproducibility, scalability, and collaboration across disciplines. The compositional framework could enable the development of new computational tools and models that support more efficient, modular research designs, leading to broad applications in optimizing workflows, improving data interoperability, and advancing the frontiers of scientific discovery in both theoretical and applied domains.
+
+\end{document}
+
+% @incollection{szabo,
+%   author    = {Zoltán Gendler Szabó},
+%   title     = {Compositionality},
+%   editor    = {Edward N. Zalta and Uri Nodelman},
+%   booktitle = {The Stanford Encyclopedia of Philosophy},
+%   edition   = {Fall 2024},
+%   publisher = {Metaphysics Research Lab, Stanford University},
+%   url       = {https://plato.stanford.edu/archives/fall2024/entries/compositionality/},
+%   year      = {2024}
+% }
+

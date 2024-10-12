@@ -1,25 +1,51 @@
-\documentclass{nsf-grfp}
+%! TeX program = lualatex
 
-\usepackage{lipsum}
+\documentclass[14pt]{extarticle}
 
-\title{Statement Title}
-\author{Author}
+% Set 1-inch margins
+\usepackage[margin=1in]{geometry}
 
+% Set Times New Roman for text and Cambria Math for math fonts
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% Use Symbol font for non-alphabetic characters
+\usepackage{textcomp}
+
+% Set line spacing to single (no less than single-spacing)
+\usepackage{setspace}
+\setstretch{1.0}
+
+% Package for handling citations
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+% For inserting equations as images
+\usepackage{graphicx}
+
+% Begin document
 \begin{document}
 
-\maketitle
+% TODO: This first paragraph should talk a little bit more about prior experiences
+\textbf{Personal Background:} I could scarcely remain focused as I walked through the narrow psychiatric ward of a children's hospital nestled in the rural countryside of Guatemala.
+The irreconcilable struggle in wanting to drop everything in service to those children while keeping focus on my medical anthropology training was amongst the cruelest lessons I have ever been taught.
+There was nothing I could do for a hospital with too few resources and far too much need -- then.
 
-\lipsum[1-2]
+% TODO: Talk about professional career further
+In my early training as an engineer and scientist, I have made it a point to never remove myself "too far from direct application" and the challenge of bridging theory to practice.
+With the COVID19 pandemic raging at its peak and my freshly minted spring of $2020$ BS training in biomedical engineering completed, I was eager to bring my training in biomedical engineering to bear on this challenge in my first full time job: a dual position as a research engineer at Georgia Tech Research Institute and the Centers for Disease Control.
+As we worked with the CDC's COVID19 Mitigation Policy Analysis Unit, directives could change within the day.
+Questions such as "what does this new data analysis tell us about this policy's effectiveness?", "did you see this new pre-print that might be useful?", "have you incorporated these fresh statistics into your analysis? Could you?" are just some of the many we had to triage while ultimately collaborating on a national response to the evolving strains of the SARS-CoV-2 virus.
 
-\section*{Section}
-\lipsum[3-4]
+% TODO: This paragraph should talk further about my motivation to go back to graduate school
+When there was a moment, I found myself coming back to a persistent nagging thought: "There must be a better way of doing this?"
+What I meant was that I felt that several of the analyses we would perform were so similar but had subtle differences that would cause us to lose time in working with our CDC colleagues.
+To me, it felt like there must be some fundamental abstraction that I could use to address this feeling.
+It was through this discontent which led me back to graudate studies and the best field to study abstraction I felt, was mathematics. 
 
-\subsection*{Subsection.}
-\lipsum[5-6]
+\textbf{Intellectual Merit:}
 
-\begin{thebibliography}{9}
-  \bibitem{example}
-    John Doe, Jane Roe, and Example Author. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. in \textit{Lorem Ipsum}.
-\end{thebibliography}
+\textbf{Broader Impacts:} In my role as a leader in the JuliaHealth community, I have taken an active role in promoting interdiscplinary research software development. Our group has more than $250$ members  across various research communities such as JuliaHealth 
+
 
 \end{document}
