@@ -36,24 +36,37 @@
 Simply put, category theory studies the "relationships that exist between things" which gives one a vantage point to think not on the minutiae of a particular problem but more broadly about how things in a problem space may ``fit together'' (i.e. ``composed together'').
 This way of framing problems is beginning to permeate specific domains such as engineering system design [2], database architecture [3], and machine learning [4]. 
 
-With this perspective, one 
-One task that is common to arguably all disciplines is the procedure of scrutinizing available information of any kind (data) to provide new insights (knowledge) about a particular topic -- a procedure more commonly referred to as ``knowledge discovery''.
-However, one applied aspect of relational thinking that is only starting to be studied is to frame research studies as compositional objects. 
-Using the machinery provided by category theory, the goal of this project is to explore and formalize the utilization of research studies as compositional objects. 
-Motivating this effort is the observation that, agnostic to field, research studies can appear very similar, but due to underlying differences with data or methodologies, require research teams to redo or, in an ad hoc manner, adapt old projects to novel applications. 
-At best, in engineering contexts, this can lead to financial or productivity losses and at worst could lead to delays in coordinating disaster responses across research teams. 
-Formalizing our understanding of research studies as compositional objects themselves could lead to more effective coordination across a research topic and lead to new frontiers of research that could take place using the formalization of studies on top of underlying mathematical objects.
+% TODO: Review the last sentence here -- could be said better and maybe allude to stronger tooling here
+With this perspective in mind, a task common to nearly all disciplines is scrutinizing available data to generate novel insight about a particular topic or field -- a procedure more commonly referred to as ``knowledge discovery''.
+Motivating this discussion is that knowledge discovery can appear similar across disciplines but due to domain specifics, adapting old discovery methods to novel applications can be a laborious process. 
+At best, this may lead to productivity losses in the US workforce [5] and at worst could lead to poorly managed disaster responses [6].
+\textbf{A category theory-informed framing of the knowledge discovery process gives a strong perspective to better understand relationships between knowledge products and how they may be most effectively composed together.}
 
 % TODO: Include Objectives within this section
-\textbf{Method and Research Plan:}  For this effort, I will explore two aspects of this problem: understanding a study in the language of category theory and exploring how this study can be composed with other studies.
+% TODO: Somehow call out the specific methods
+\textbf{Research Plan:} I will dedicate my PhD studies at Harvard University to investigate the promise of applying category theory in knowledge discovery under the advisement of Professor Nathaniel Osgood.
+There, I will pursue the following objectives:
+
+\textbf{Objective 1: Map the Knowledge Discovery Process To Category Theoretic Language.}
+
+To drive exploration of the general knowledge discovery process, I will pick three heterogeneous data sets that vary by how they are sampled over time and by what kind of data they contain. 
+Then, I will construct general knowledge discovery pipelines to scrutinize these data sets through various data science techniques (such as clustering or prediction methods) to simulate deriving novel insights data in general.
+After creating these pipelines, I will then explore manually how these data sets could be related to one another.
+
+Once several relationships that could exist within and between data sets have been enumerated, I will then proceed to map these knowledge discovery processes on to various categorical structures.
+First, I will use $\mathscr{C}$-sets, which describes a functor mapping a schema category $\mathscr{C}$ into the category $\mathbb{Set}$ (as objects) and functions between them (as morphisms) [@osgood] % TODO: Add a sentence after this about what this is exactly
+Then, is the decorated copresheaf (known as "acsets") which is very helpful in relating these species of data and computing upon them [@lynch]
+
+\textbf{Objective 2: Prototype Knowledge Discovery for a Specific Topic Using Category Theoretic Framing.}
+
+
 To carry out this effort, I will use three strongly hetergeneous data sets to develop a study. 
 The data I will use comprises of the following: [IPUMS](http://ipums.org/) census microdata for a variety of different demographic information across the globe and a ton for the USA, [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) & [National Centers for Environmental Information](https://www.ncei.noaa.gov) These two datasets have such a wide array of climate related data for the entire globe on a fantastic time resolution, and [Pharmetrics Plus](https://www.iqvia.com/locations/united-states/library/fact-sheets/iqvia-pharmetrics-plus) a 35+ million USA patient database of patient medical records from across the entire country.
 What motivates this particular selection of data sets is the significant differences between them: the IPUMS data is regularly sampled across the US at a state or coarse population level at regular and monthly time intervals, the ERA5 and NCEI data is also regularly sampled but at a much more granular time and temporal resolution, and the patient data set varies significantly by geospatial region as well as having extremely irregular or even random sampling intervals for patient encounters.
-Additionally, given my research experience, wondering about how to best relate and harmonize these strongly heterogeneous datasets is a common problem I have witnessed across projects -- figuring out this task can sometimes be most of the solution.
 
-Within the first year of my work on this, I will flesh out a study using this strongly heterogeneous data.
-To do this, I will explore how to model this data on top of the categorical structure, $\mathscr{C}$-sets, which is a functor mapping a schema category $\mathscr{C}$ into the category $\mathbb{Set}$ (as objects) and functions between them (as morphisms) [@osgood].
-Further enriching this object is the decorated copresheaf (known as "acsets") which is very helpful in relating these species of data and computing upon them [@lynch]
+\textbf{Objective 3: Assess and Validate Insights from Category-Theory Informed Knowledge Discovery Prototype.}
+
+\textbf{Objective 4: Explore Composing of Knowledge Discovery Processes.}
 
 In the second year, after I have more adequately described and understood this study in terms of category theory, I will further explore how to meaningfully relate scientific studies together.
 Inspired by thoughts from @bgavran's papers in applying Category Theory to Machine Learning (namely [Category Theory in Machine Learning](https://arxiv.org/abs/2106.07032) and [Position: Categorical Deep Learning is an Algebraic Theory of All Architectures](https://arxiv.org/abs/2402.15332)) 
@@ -97,6 +110,7 @@ The use of category theory to harmonize heterogeneous datasets—ranging from ce
 
 \textbf{Broader Impacts:} This project introduces a new framework for formalizing research studies as compositional objects, which could revolutionize how large-scale, complex systems are analyzed across fields such as engineering, computer, and information sciences. By establishing a structured approach to integrating diverse methodologies and datasets, this work has the potential to enhance research reproducibility, scalability, and collaboration across disciplines. The compositional framework could enable the development of new computational tools and models that support more efficient, modular research designs, leading to broad applications in optimizing workflows, improving data interoperability, and advancing the frontiers of scientific discovery in both theoretical and applied domains.
 
-\textbf{References:} [1] \textit{Compositionality}, 2024. [2] \textit{ACT4ED}, MIT 1.S980 [3] \textit{Algebraic Databases}, Shultz, et. al., 2016. [4] \textit{Category theory in machine learning}, Gavranović, 2021.
+\textbf{References:} [1] \textit{Compositionality}, 2024. [2] \textit{ACT4ED}, MIT 1.S980 [3] \textit{Algebraic Databases}, Shultz, et. al., 2016. [4] \textit{Category theory in machine learning}, Gavranović, 2021. [5] \textit{Measuring the impact of knowledge loss: a longitudinal study} Massingham [6] \textit{Emergency Preparedness for Vulnerable Populations}, Nick
+
 
 \end{document}
