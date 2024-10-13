@@ -45,61 +45,45 @@ At best, this may lead to productivity losses in the US workforce [5] and at wor
 % TODO: Include Objectives within this section
 % TODO: Somehow call out the specific methods
 \textbf{Research Plan:} I will dedicate my PhD studies at Harvard University to investigate the promise of applying category theory in knowledge discovery under the advisement of Professor Nathaniel Osgood.
-There, I will pursue the following objectives:
+Additionally, I will continue to maintain a strong collaboration relationship with the Topos Institute and the GATAS Lab at the University of Florida.
+In the course of this work, I will pursue the following objectives:
 
-\textbf{Objective 1: Map the Knowledge Discovery Process To Category Theoretic Language.}
-
-To drive exploration of the general knowledge discovery process, I will pick three heterogeneous data sets that vary by how they are sampled over time and by what kind of data they contain. 
+\textbf{Objective 1: Map the Knowledge Discovery Process To Category Theoretic Language.} To drive exploration of the general knowledge discovery process, I will pick three heterogeneous data sets that vary by how they are sampled over time and by what kind of data they contain. 
 Then, I will construct general knowledge discovery pipelines to scrutinize these data sets through various data science techniques (such as clustering or prediction methods) to simulate deriving novel insights data in general.
 After creating these pipelines, I will then explore manually how these data sets could be related to one another.
 
 Once several relationships that could exist within and between data sets have been enumerated, I will then proceed to map these knowledge discovery processes on to various categorical structures.
 First, I will use $\mathscr{C}$-sets, which describes a functor mapping a schema category $\mathscr{C}$ into the category $\mathbb{Set}$ (as objects) and functions between them (as morphisms) [@osgood] % TODO: Add a sentence after this about what this is exactly
-Then, is the decorated copresheaf (known as "acsets") which is very helpful in relating these species of data and computing upon them [@lynch]
+Then, to assess how reasonable the identified relationships are, I will use a decorated copresheaf structure (known as "acsets") to compute a presentation of the schema represented by the acset. [@lynch]
+This objective will be completed when I have created an adequate $C$-set presentation that, to the best of my ability, describes the relationships present within and between these datasets.
 
-\textbf{Objective 2: Prototype Knowledge Discovery for a Specific Topic Using Category Theoretic Framing.}
+% The data I will use comprises of the following: [IPUMS](http://ipums.org/) census microdata for a variety of different demographic information across the globe and a ton for the USA, [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) & [National Centers for Environmental Information](https://www.ncei.noaa.gov) These two datasets have such a wide array of climate related data for the entire globe on a fantastic time resolution, and [Pharmetrics Plus](https://www.iqvia.com/locations/united-states/library/fact-sheets/iqvia-pharmetrics-plus) a 35+ million USA patient database of patient medical records from across the entire country.
+% What motivates this particular selection of data sets is the significant differences between them: the IPUMS data is regularly sampled across the US at a state or coarse population level at regular and monthly time intervals, the ERA5 and NCEI data is also regularly sampled but at a much more granular time and temporal resolution, and the patient data set varies significantly by geospatial region as well as having extremely irregular or even random sampling intervals for patient encounters.
 
+\textbf{Objective 2: Prototype Knowledge Discovery for a Specific Topic Using Category Theoretic Framing.} At this stage, the data sets I have been exploring have been framed using the language of category theory.
+Now, I will take this framing of these data sets to drive novel knowledge discovery for a particular topic beyond what is generally possible with data science approaches.
+I will explore what methods are possible to compute on top of this data now taking inspiration from previous work done by Osgood and Zardini. % TODO: Add citation from An Algebraic Framework for Structured Epidemic Modeling for Nate. Maybe cut Zardini? 
+Additionally, I will identify what questions are possible to be answered in this new framework beyond what could be addressed during objective 1.
+Objective 2 will be completed once I have not only determined what sorts of methods would be most salient to compute upon this framing but have also uncovered and attempted to address novel questions that could only be asked by using a categorical framing.
 
-To carry out this effort, I will use three strongly hetergeneous data sets to develop a study. 
-The data I will use comprises of the following: [IPUMS](http://ipums.org/) census microdata for a variety of different demographic information across the globe and a ton for the USA, [ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) & [National Centers for Environmental Information](https://www.ncei.noaa.gov) These two datasets have such a wide array of climate related data for the entire globe on a fantastic time resolution, and [Pharmetrics Plus](https://www.iqvia.com/locations/united-states/library/fact-sheets/iqvia-pharmetrics-plus) a 35+ million USA patient database of patient medical records from across the entire country.
-What motivates this particular selection of data sets is the significant differences between them: the IPUMS data is regularly sampled across the US at a state or coarse population level at regular and monthly time intervals, the ERA5 and NCEI data is also regularly sampled but at a much more granular time and temporal resolution, and the patient data set varies significantly by geospatial region as well as having extremely irregular or even random sampling intervals for patient encounters.
-
-\textbf{Objective 3: Assess and Validate Insights from Category-Theory Informed Knowledge Discovery Prototype.}
-
-\textbf{Objective 4: Explore Composing of Knowledge Discovery Processes.}
-
-In the second year, after I have more adequately described and understood this study in terms of category theory, I will further explore how to meaningfully relate scientific studies together.
-Inspired by thoughts from @bgavran's papers in applying Category Theory to Machine Learning (namely [Category Theory in Machine Learning](https://arxiv.org/abs/2106.07032) and [Position: Categorical Deep Learning is an Algebraic Theory of All Architectures](https://arxiv.org/abs/2402.15332)) 
-**Interface a ACSet study configuration with Machine Learning tools.** As the current ACSet machinery is within Julia, we'll make liberal use of the [Tables.jl interface](https://github.com/JuliaData/Tables.jl) as probably the core interchange format.
-**Interpret a statistic on top of the ACSet-based study.** This will be the crux of the study as to what is possible and what can be done within this framing. At this point will be some uncharted territory so will base again upon *An Algebraic Framework for Structured Epidemic Modeling*. Perhaps I will reach out to Simon Frost or @ndo885 at this stage as well.
+\textbf{Objective 3: Explore Composition of Knowledge Discovery Processes.} At this stage, I will rexamine objectives 1 and 2 with another set of data or, at least, a different $C$-set presentation to frame another knowledge discovery pipeline in the language of category theory.
+Once this secondary knowledge discovery pipeline has been framed using category theoretic language, I am now at one of the most exciting points of this work: exploring how these knowledge discovery pipelines can be composed with one another.
+An example of this idea given in Figure a and Figure b.
+Using petri nets, a convenient diagrammatic language that has a well-described category theoretic treatment, one can describe knowledge discovery processes as separate diagrams (as shown in Figure a) and then explore how these diagrams could potentially compose.
+Then, in Figure b, a final diagram incorporating all knowledge discovery processes could be created that is itself a novel knowledge discovery process that can drive insight across different knowledge discovery pipelines.
 
 \begin{figure}[!h]
  \begin{subfigure}{0.4\textwidth}
-     \includegraphics[width=\textwidth]{marking_1}
-     \caption{\dots}
+     \includegraphics[width=\textwidth]{sub_models}
+     \caption{Relating multiple knowledge discovery processes together}
      \label{fig:a}
  \end{subfigure}
  \hfill
  \begin{subfigure}{0.4\textwidth}
-     \includegraphics[width=\textwidth]{marking_2}
-     \caption{\dots}
+     \includegraphics[width=\textwidth]{composed_model}
+     \caption{Composing a final process that incorporates information from previous knowledge discovery processes}
      \label{fig:b}
  \end{subfigure}
- 
- \medskip
- \begin{subfigure}{0.4\textwidth}
-     \includegraphics[width=\textwidth]{marking_3}
-     \caption{\dots}
-     \label{fig:c}
- \end{subfigure}
- \hfill
- \begin{subfigure}{0.4\textwidth}
-     \includegraphics[width=\textwidth]{marking_4}
-     \caption{\dots}
-     \label{fig:d}
- \end{subfigure}
-
- \caption{Caption for all 4 figures}
  \label{Label}
 
 \end{figure}
