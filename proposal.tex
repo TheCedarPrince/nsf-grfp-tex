@@ -22,30 +22,41 @@
 
 % For inserting images and subcaptions
 \usepackage{graphicx,subcaption} 
+\usepackage{wrapfig}
 \usepackage{svg}
 
 % Begin document
 \begin{document}
 
-% TODO: Wordsmith "knowledge products" a bit more
-% TODO: Review first sentence again
-\textbf{Hypothesis:} Knowledge discovery is a fundamental procedure across disciplines but is time intensive and laborious.
-\textbf{Framing knowledge discovery in category theoretic terminology would enable the furthered understanding of relationships between knowledge products.}
+\textbf{Introduction:} Category theory is slowly beginning to permeate various ``applied'' disciplines by providing a unique framing of knowledge discovery processes to provide insight into how these processes can be composed together to yield novel knowledge generation. % TEJA: Ask if this topical sentence is stronger now
+To explain the significance of this, the idea of compositionality is the characteristic that ``describes and quantifies how complex things can be assembled out of simple parts'' [1] and is a concept ubiquitous across mathematics but is seen acutely in the fundamentals of category theory.
+The field of category theory studies, simply put, the "relationships that exist between things" which gives one a vantage point to think not on the minutiae of a particular problem but more broadly about how things in a problem space may ``fit together'' (i.e. ``be composed'').
+By thinking at this level of abstraction, it can be observed broadly that a task common to nearly all disciplines is ``knowledge discovery'', the process of scrutinizing available data to generate novel insight about a particular field or topic. % TEJA: Does this seem natural?
 
-\textbf{Introduction:} Compositionality, the characteristic that ``describes and quantifies how complex things can be assembled out of simple parts''[1], is a concept ubiquitous across mathematics but is seen acutely in the fundamentals of category theory.
-Simply put, category theory studies the "relationships that exist between things" which gives one a vantage point to think not on the minutiae of a particular problem but more broadly about how things in a problem space may ``fit together'' (i.e. ``composed together'').
-This way of framing problems is beginning to permeate specific domains such as engineering system design [2], database architecture [3], and machine learning [4]. 
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\includegraphics[width=0.3\textwidth]{sub_models}
+\vspace{-10pt}
+\caption{
+  3 discovery processes (the three different petri nets in boxes) with relationships defined by arrows and lines inside of and between processes. % TEJA: How does caption read?
+}
+\vspace{30pt}
+\includegraphics[width=0.25\textwidth]{composed_model}
+\vspace{-10pt}
+\caption{
+  Composition of the 3 discovery processes into one novel discovery process. % TEJA: How does caption read?
+}
+\end{wrapfigure}
 
-% TODO: Review the last sentence here -- could be said better and maybe allude to stronger tooling here
-With this perspective in mind, a task common to nearly all disciplines is scrutinizing available data to generate novel insight about a particular topic or field -- a procedure more commonly referred to as ``knowledge discovery''.
-Motivating this discussion is that knowledge discovery can appear similar across disciplines but due to domain specifics, adapting old discovery methods to novel applications can be a laborious process. 
-At best, this may lead to productivity losses in the US workforce [5] and at worst could lead to poorly managed disaster responses [6].
-\textbf{A category theory-informed framing of the knowledge discovery process gives a strong perspective to better understand relationships between knowledge products and how they may be most effectively composed together.}
+Motivating the objectives of this proposal is my experience within Georgia Tech Research Institute and the US Centers for Disease Control where I noticed that knowledge discovery processes can appear similar across disciplines but due to domain specifics, adapting old discovery methods to novel applications can be a laborious and time consuming process. 
+To give a concrete example of this, consider figure 1 which depicts 3 different dynamical systems (denoted by the different figures within each colored box) given by petri nets, a diagrammatic language well-understood in the terms of category theory. % TODO: Add citations for petri nets
+Within each box, the petri nets are modeling variations of the SIR compartmental model to drive knowledge discovery in epidemiology (compartmental models are widespread across epidemiology but have application in economics, ecology, and beyond). 
+Here, circles represent populations (S for susceptible, I for infected, R for recovered, V for vaccinated, and Iv for infected-vaccinated), squares represent variables that attenuate the strength of relationships, given by arrows, are between populations, and dotted lines relate populations across the three knowledge discovery processes.
+Figure 2 then shows the result of how composing these models across dotted lines can reuse separate knowledge discovery processes while also simplifying them into one novel knowledge discovery process subsuming former knowledge discovery efforts.
+\textbf{It is the goal of this proposal to demonstrate how a category theoretic treatment of knowledge discovery can improve the fundamental understanding of relationships between discovery processes, reduce the time needed to find relationships, and how processes can be resused to gain insight into novel applications.}
 
-% TODO: Include Objectives within this section
-% TODO: Somehow call out the specific methods
 \textbf{Research Plan:} I will dedicate my PhD studies at Harvard University to investigate the promise of applying category theory in knowledge discovery under the advisement of Professor Nathaniel Osgood.
-Additionally, I will continue to maintain a strong collaboration relationship with the Topos Institute and the GATAS Lab at the University of Florida.
+Additionally, I will continue to maintain a strong collaboration relationship with the Topos Institute and the GATAS Lab at the University of Florida who are pioneering applied category theory approaches and technology.
 In the course of this work, I will pursue the following objectives:
 
 \textbf{Objective 1: Map the Knowledge Discovery Process To Category Theoretic Language.} To drive exploration of the general knowledge discovery process, I will pick three heterogeneous data sets that vary by how they are sampled over time and by what kind of data they contain. 
@@ -72,21 +83,6 @@ An example of this idea given in Figure a and Figure b.
 Using petri nets, a convenient diagrammatic language that has a well-described category theoretic treatment, one can describe knowledge discovery processes as separate diagrams (as shown in Figure a) and then explore how these diagrams could potentially compose.
 Then, in Figure b, a final diagram incorporating all knowledge discovery processes could be created that is itself a novel knowledge discovery process that can drive insight across different knowledge discovery pipelines.
 
-\begin{figure}[!h]
- \begin{subfigure}{0.4\textwidth}
-     \includegraphics[width=\textwidth]{sub_models}
-     \caption{Relating multiple knowledge discovery processes together}
-     \label{fig:a}
- \end{subfigure}
- \hfill
- \begin{subfigure}{0.4\textwidth}
-     \includegraphics[width=\textwidth]{composed_model}
-     \caption{Composing a final process that incorporates information from previous knowledge discovery processes}
-     \label{fig:b}
- \end{subfigure}
- \label{Label}
-
-\end{figure}
 
 \textbf{Intellectual Merit:} This project aims to advance approaches in knowledge discovery by leveraging category theory formalizations to observe novel relationships present between knowledge products. 
 The use of category theory to harmonize heterogeneous datasets across knowledge discovery processes could offer a new perspective in how traditional discovery could be applied on top of data scaffolded in a category theory framing.
@@ -96,8 +92,9 @@ Additionally, by taking advantage of this framing, prior knowledge discovery pip
 Furthermore, as the limits of applied category theoretic machinery is explored in the course of this work, new frontiers in applied category theory could be explored.
 This could inform the foundational mathematics undergirding any applications while also leading to the creation of computational software based on these insights.
 Finally, this framing could improve the construction of knowledge discovery processes from the beginning by allowing one to easily reason about how a given process in development could be composed in the future or with other pipelines while in development.
+This way of framing problems is beginning to permeate specific domains such as engineering system design [2], database architecture [3], and machine learning [4]. % TODO: Incorporate this here somehow
 
-\textbf{References:} [1] \textit{Compositionality}, 2024. [2] \textit{ACT4ED}, MIT 1.S980 [3] \textit{Algebraic Databases}, Shultz, et. al., 2016. [4] \textit{Category theory in machine learning}, Gavranović, 2021. [5] \textit{Measuring the impact of knowledge loss: a longitudinal study} Massingham [6] \textit{Emergency Preparedness for Vulnerable Populations}, Nick
+\textbf{References:} [1] \textit{Compositionality}, 2024. [2] \textit{ACT4ED}, MIT 1.S980 [3] \textit{Algebraic Databases}, Shultz, et. al., 2016. [4] \textit{Category theory in machine learning}, Gavranović, 2021. [5] \textit{Measuring the impact of knowledge loss: a longitudinal study} Massingham [6] \textit{Emergency Preparedness for Vulnerable Populations}, Nick [7] \textit{An Algebraic Framework for Structured Epidemic Modelling.}, Libkind, et. al., 2022. 
 
 
 \end{document}
